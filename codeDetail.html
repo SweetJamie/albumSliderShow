@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <title>图片展示说明文档</title>
+
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="css/jquery.albumSliderShow.css"/>
+    <link rel="stylesheet" href="./css/animate.css"/>
+
+    <style>
+        #title{
+            padding:15px;
+            font-size: 20px;
+            font-family: "微软雅黑", "Microsoft YaHei", "宋体", Song, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+            font-weight: bold;
+        }
+        h1{
+            display:block;
+            line-height: 25px;
+            padding-left:30px;
+            font-family: "微软雅黑", "Microsoft YaHei", "宋体", Song, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+        }
+        dl{ font-family:'Microsoft YaHei'; width: 95%; height: 100%; overflow: hidden; margin: 20px auto;  border:1px solid #eee; background: #f8f8f8; padding: 20px; }
+        dl dt{ width: 100%; height: 30px; line-height: 30px; font-size: 14px; font-weight: bold; }
+        dl dd{font-size: 14px;}
+        pre{ color:#fff; height: 100%; line-height:20px;overflow: hidden; background: #66BE8C; margin: 10px 0; word-break: normal; word-wrap:break-word;}
+        code{ word-break: normal;}
+        ul,li{ list-style: none; }
+        em{
+            color:#f72378;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            color: #ffffff;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            direction: ltr;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            line-height: 1.5;
+
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none;
+        }
+
+        pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+        code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+            background: #b3d4fc;
+        }
+
+        pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+        code[class*="language-"]::selection, code[class*="language-"] ::selection {
+            background: #b3d4fc;
+        }
+
+        /* Code blocks */
+        pre[class*="language-"] {
+            padding: 0em;
+            margin: 0;
+            overflow: auto;
+        }
+
+        :not(pre) > code[class*="language-"],
+        pre[class*="language-"] {
+            background: #f5f2f0;
+        }
+
+        /* Inline code */
+        :not(pre) > code[class*="language-"] {
+            padding: .1em;
+            border-radius: .3em;
+        }
+
+        .token.comment,
+        .token.prolog,
+        .token.doctype,
+        .token.cdata {
+            color: slategray;
+        }
+
+        .token.punctuation {
+            color: #ffffff;
+        }
+
+        .namespace {
+            opacity: .7;
+        }
+
+        .token.property,
+        .token.tag,
+        .token.boolean,
+        .token.number,
+        .token.constant,
+        .token.symbol,
+        .token.deleted {
+            color: #f72378;
+        }
+
+        .token.selector,
+        .token.attr-name,
+        .token.string,
+        .token.char,
+        .token.builtin,
+        .token.inserted {
+            color: #9bfb54;
+        }
+
+        .token.operator,
+        .token.entity,
+        .token.url,
+        .language-css .token.string,
+        .style .token.string,
+        .token.variable {
+            color: #a67f59;
+            background: hsla(0, 0%, 100%, .5);
+        }
+
+        .token.atrule,
+        .token.attr-value,
+        .token.keyword {
+            color: #fbf935;
+        }
+
+        .token.function {
+            color: #DD4A68;
+        }
+
+        .token.regex,
+        .token.important {
+            color: #e90;
+        }
+
+        .token.important {
+            font-weight: bold;
+        }
+
+        .token.entity {
+            cursor: help;
+        }
+
+        pre.line-numbers {
+            position: relative;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            padding-left: 3.8em;
+            background: #3D3F52;
+            counter-reset: linenumber;
+        }
+        pre.line-numbers > code {
+            position: relative;
+        }
+
+        .line-numbers .line-numbers-rows {
+            position: absolute;
+            pointer-events: none;
+            top: -1.2em;
+            bottom: -1.2em;
+            background: #343545;
+            font-size: 100%;
+            left: -3.8em;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            color: #363f4d;
+            text-align: center;
+            width: 3em; /* works for line-numbers below 1000 lines */
+            letter-spacing: -1px;
+
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+        }
+
+        .line-numbers-rows > span {
+            pointer-events: none;
+            display: block;
+            counter-increment: linenumber;
+        }
+
+        .line-numbers-rows > span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: 0.8em;
+            text-align: right;
+        }
+    </style>
+
+</head>
+<body>
+<header id="title">
+    图片查看插件使用说明：<a href="demon.html">点击查看示例</a>
+</header>
+
+<dl class="item">
+    <dt>如需动画效果则需引用<em>animate.css</em>如果不需要可不引用,ie8不支持）</dt>
+    <dd>
+    <pre class="line-numbers wow fadeInRight"><code class="language-markup">&lt;link rel="stylesheet" href="animate.css"/&gt;</code></pre>
+    </dd>
+</dl>
+
+<dl class="item">
+    <dt style="height:60px;">Html 格式(div需添加<em>class="J_albumSlider"</em>,<br>要生成图片展示的元素需放在该div的子元素ul li标签中，
+        并在li标签或li的子标签中加上<em>data-role="album"</em>，以及<em>data-title或者"alt"</em>存放图片名称,<em>data-src或者src</em>存放图片路径。</dt>
+    <dd>
+    <pre class="line-numbers wow fadeInRight"><code class="language-markup">&lt;!-- Your html --&gt;
+&lt;div id="youIdName" class="J_albumSlider"&gt;
+   &lt;ul&gt;
+     &lt;li&gt;
+        &lt;img data-role="album" src="yourPic1.jpg"  data-title="图片名称一">
+     &lt;/li&gt;
+     &lt;li data-role="album" src="yourPic2.jpg"  data-title="图片名称二">文字列表&lt;/li&gt;
+        ....
+   &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </dd>
+</dl>
+
+<dl class="item">
+    <dt>Js文件和调用方法(须引用jquery文件<em>jquery.min.js</em>和<em>jquery.albumShow.js</em>)</dt>
+    <dd>
+    <pre class="line-numbers wow fadeInRight"><code class="language-markup">&lt;script src="js/jquery-1.11.3.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.albumShow.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $("#youIdName").albumShow();
+&lt;/script&gt;</code></pre>
+    </dd>
+</dl>
+
+
+<dl class="item">
+    <dt>参数设置（以下值均为默认值）</dt>
+    <dd>
+    <pre class="line-numbers">
+  'hasThumbnail': true,     //是否显示缩略图
+  'animateType': 'fadeInRightBig',    //动画效果，参数及具体效果参见链接 <a style="color:#aaa" href="http://daneden.github.io/animate.css/">http://daneden.github.io/animate.css/</a>
+  'fullScreen': false,    //是否满屏显示，默认false，即按原图尺寸显示，若为true，则根据屏幕尺寸和图片比例按最大宽度或高度显示
+  'hasSmallView':true,    //是否出现右下角的预览图
+  'isAutoPlay':false     //是否自动播放，默认为5000（单位ms），即每2秒切换一张，可设置为其它时间，需为数字，若设置为false则不自动播放且不显示播放按钮
+   'startIndex':3    //从第几张图开始播放，默认为被点击的那张图片或者标签开始</pre>
+    </dd>
+</dl>
+
+<dl class="item">
+    <dt>可传data参数，格式如下</dt>
+    <dd>
+    <pre class="line-numbers wow fadeInRight"><code class="language-markup">$("#group-3").albumShow({
+        'data':[{
+            "title":"第三组图片名称",   //相册标题
+            "group":"group-3",
+            "start":2,
+            "data":[{
+                "alt":"picName111111111asfdasdfafsdf1",
+                "src":"img/sydney.jpg"
+            },{
+                "alt":"picName1111-1",
+                "src":"img/dakar.jpg"
+            },{
+                "alt":"picName1111-2",
+                "src":"img/tokyo.jpg"
+            }]
+        },{
+            "title":"第四组图片名称",   //相册标题
+            "group":"group-4",
+            "start":2,
+            "data":[{
+                "alt":"picName222222222",
+                "src":"img/sydney.jpg"
+             },{
+                "alt":"picName2-2",
+                "src":"img/dakar.jpg"
+                }]
+            }]
+        })</code></pre>
+    </dd>
+</dl>
+
+<br/><br/><br/>
+
+<br/><br/><br/>
+<hr/>
+
+
+
+
+
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/prism.js"></script>
+    <script src="./js/jquery.albumSliderShow.js"></script>
+
+</body>
+</html>
