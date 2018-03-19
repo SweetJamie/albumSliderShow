@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <title>图片展示</title>
+
+    <link rel="stylesheet" href="css/jquery.albumSliderShow.css"/>
+    <link rel="stylesheet" href="css/animate.css"/></head>
+<body>  <!--onmousewheel="return false;"-->
+
+<div class="picture-slide-wrap">
+
+    <div id="group-1" data-group="group-1" class="J_albumSlider picture-container" data-role="albumSlider">
+        <h3 class="J_albumSlider_groupTitle">第一组</h3>
+        <ul class="picture-slide-list clearfloat">
+            <li>
+                <img data-role="album" src="img/san-francisco.jpg" alt="San Francisco, USA" data-title="深圳紫城别苑效果图.jpg"
+                     data-description="图片说明图片说明图片说明图片说明">
+                <div class="pictureText"><h3>深圳紫城别苑效果图.jpg</h3></div>
+            </li>
+            <li data-role="album" src="img/rio.jpg" alt="Rio de Janeiro, Brazil">
+                <img src="img/rio.jpg" alt="Rio de Janeiro, Brazil" data-title="深圳紫城别苑效果图1.jpg"
+                     data-description="图片说明图片说明图片说明图片说明">
+            </li>
+            <li data-role="album" src="img/london.jpg" alt="" data-title="深圳紫城别苑效果图2.jpg">
+                <img src="img/london.jpg" alt="" data-title="深圳紫城别苑效果图2.jpg" data-description="图片说明图片说明图片说明图片说明">
+            </li>
+            <li>
+                <img data-role="album" src="img/pci-lg.jpg" alt="" data-title="深圳紫城别苑效果图3.jpg"
+                     data-description="图片说明图片说明图片说明图片说明">
+            </li>
+            <li>
+                <img data-role="album" src="img/new-delhi.jpg" alt="" data-title="深圳紫城别苑效果图4.jpg"
+                     data-description="图片说明图片说明图片说明图片说明">
+            </li>
+            <li>
+                <img data-role="album" src="img/toronto.jpg" alt="" data-title="深圳紫城别苑效果图5.jpg"
+                     data-description="图片说明图片说明图片说明图片说明">
+            </li>
+            <li>
+                <img data-role="album" src="img/london.jpg" alt="" data-title="深圳紫城别苑效果图.6jpg"
+                     data-description="图片说明图片说明图片说明图片说明">
+            </li>
+        </ul>
+    </div>
+
+    <div id="group-2" data-group="group-2" class="J_albumSlider picture-container" data-role="albumSlider">
+        <h3 class="J_albumSlider_groupTitle">第二组</h3>
+        <ul class="picture-slide-list clearfloat">
+            <li>
+                <img data-role="album" src="img/san-francisco.jpg" alt="San Francisco, USA" data-title="2-1"
+                     data-description="Golden Gate Bridge">
+            </li>
+            <li>
+                <img data-role="album" src="img/rio.jpg" alt="Rio de Janeiro, Brazil">
+            </li>
+            <li>
+                <img data-role="album" src="img/london.jpg" alt="" data-large-src="img/london.jpg">
+            </li>
+            <li>
+                <img data-role="album" src="img/new-york.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/new-delhi.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/paris.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/sydney.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/tokyo.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/honk-kong.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/dakar.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/toronto.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/london.jpg" alt="" data-large-src="img/london.jpg">
+            </li>
+            <li>
+                <img data-role="album" src="img/new-york.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/new-delhi.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/dakar.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/sydney.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/tokyo.jpg" alt="">
+            </li>
+            <li>
+                <img data-role="album" src="img/dakar.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<div class="div1"></div>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.albumSliderShow.js"></script>
+<script>
+    $(".div1").albumSliderShow({
+        'data': [{
+            "title": "第三组图片名称",   //相册标题
+            "group": "group-3",
+            "start": 2,
+            "data": [{
+                "alt": "picName111111111asfdasdfafsdf1",
+                "src": "img/sydney.jpg"
+            }, {
+                "alt": "picName1111-1",
+                "src": "img/dakar.jpg"
+            }, {
+                "alt": "picName1111-2",
+                "src": "img/tokyo.jpg"
+            }]
+        }, {
+            "title": "第四组图片名称",   //相册标题
+            "group": "group-4",
+            "start": 2,
+            "data": [{
+                "alt": "picName222222222",
+                "src": "img/sydney.jpg"
+            }, {
+                "alt": "picName2-2",
+                "src": "img/dakar.jpg"
+            }]
+        }],
+    })
+</script>
+
+
+</body>
+</html>
